@@ -80,7 +80,13 @@ function writePassword() {
 }
 
 function generatePassword() {
-  click = prompt("How many characters in password between 8 and 128.");
+  click = prompt("How many characters in password between 8 and 128?");
+  if (!enter) {
+    alert("must enter value!")
+  } else if (enter <8 || enter >128) {
+    alert("must be between 8 and 128")
+  }
+
   
 }
 
