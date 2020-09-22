@@ -6,6 +6,10 @@ var confirmCharacter;
 var confirmUppercase;
 var confirmLowercase;
 
+//password variables
+
+number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
+
 var generateBtn = document.querySelector("#generate");
 //ask for length
 function writePassword() {
