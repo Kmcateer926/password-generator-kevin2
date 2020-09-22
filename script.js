@@ -1,10 +1,11 @@
 // Assignment Code
 //user input to be set to confirms for true false statements
-var enter;
+var length;
 var confirmNumber;
 var confirmSpecialCharacter;
 var confirmUppercase;
 var confirmLowercase;
+
 var choices;
 
 //password variables as choices for password
@@ -78,34 +79,46 @@ function writePassword() {
 
   passwordText.value = password;
 }
+
 //initial user input, from choosing length to whether they want numbers/characters/letters
 function generatePassword() {
-
- enter = parseInt(
-  prompt("How many characters in password between 8 and 128?")
-);
-if (!enter) {
-  alert("must enter value!");
-} else if (enter < 8 || enter > 128) {
-  alert("must be between 8 and 128");
-} else {
-  confirmUppercase = confirm("will password contain Uppercase letters?");
-  confirmNumber = confirm("will password contain numbers?");
-  confirmLowercase = confirm("will password contain lowercase letters?");
-  confirmSpecialCharacter = confirm(
-    "will password contain special characters?"
+  length = parseInt(
+    prompt("How many characters in password between 8 and 128?")
   );
+  if (!length) {
+    alert("must enter value!");
+  } else if (length < 8 || length > 128) {
+    alert("must be between 8 and 128");
+  } else {
+    confirmUppercase = confirm("will password contain Uppercase letters?");
+    confirmNumber = confirm("will password contain numbers?");
+    confirmLowercase = confirm("will password contain lowercase letters?");
+    confirmSpecialCharacter = confirm(
+      "will password contain special characters?"
+    );
+  }
+  if (
+    !confirmSpecialCharacter &&
+    !confirmNumber &&
+    !confirmUppercase &&
+    !confirmLowercase
+  ) {
+    alert("You must choose");
+  } else if (confirmUppercase) {
+    choices = upperCase;
+  } else if (confirmLowercase) {
+    choices = lowerCase;
+  } else if (confirmSpecialCharacter) {
+    choices = specialCharacter;
+  } else if (confirmNumber) {
+    choices = number;
+  }
+  var myArray = [];
+  for (var i = 0; i < length; i++) {
+    var pickChoices = choices[Math.floor(Math.random() * choices.length)];
+    return myArray.push(pickChoices);
+  }
 }
-if (confirmUppercase && confirmNumber && confirmLowercase && confirmSpecialCharacter)
-choices = specialCharacter.concat(number, upperCase, lowerCase)
-
-for (var i = 0; i < enter; i++) {
-  var pickChoices = choices[Math.floor(Math.random() * choices.length)];
-}
-
-  return pickChoices;
-}
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
