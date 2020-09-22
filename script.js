@@ -78,14 +78,23 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
+//initial user input, from choosing length to whether they want numbers/characters/letters
 function generatePassword() {
   enter = parseInt(prompt("How many characters in password between 8 and 128?"));
   if (!enter) {
     alert("must enter value!")
   } else if (enter <8 || enter >128) {
     alert("must be between 8 and 128")
-  }
+  } else {
+    confirmUppercase = confirm("will password contain Uppercase letters?")
+    confirmNumber = confirm("will password contain numbers?")
+    confirmLowercase = confirm("will password contain lowercase letters?")
+    confirmSpecialCharacter = confirm("will password contain special characters?")
+  };
+
+  
+
+
 
   
 }
