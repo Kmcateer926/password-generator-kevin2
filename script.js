@@ -57,7 +57,7 @@ function generatePassword() {
      choices[Math.floor(Math.random() * choices.length)];
   }
 
-  return pickChoices;
+  return choices;
 }
 
 // Add event listener to generate button
