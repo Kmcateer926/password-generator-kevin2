@@ -10,17 +10,17 @@ var choices = "";
 var password = "";
 var generateBtn = document.querySelector("#generate");
 var passwordText = document.querySelector("#password");
-//ask for length
 //initial user input, from choosing length to whether they want numbers/characters/letters
 function writePassword() {
   // user is alerted if it does not meet required criteria
-  enter = prompt("How many characters in password between 8 and 128?");
+  enter = parseInt(prompt("How many characters in password between 8 and 128?"));
   if (!enter) {
     alert("must enter value!");
   } else if (enter < 8 || enter > 128) {
     alert("must be between 8 and 128");
   } else {
     // confirms assigned to variables
+    // from my understanding, confirms act a true if you enter yes/ok in the boolean
     var includeUppercase = confirm("will password contain Uppercase letters?");
     var includeNumber = confirm("will password contain numbers?");
     var includeLowercase = confirm("will password contain lowercase letters?");
@@ -40,7 +40,8 @@ function writePassword() {
   if (includeSpecialCharacter) {
     choices += specialCharacter;
   }
-  //should return alert to user but is broken on deployed site
+  //should return alert to user 
+  // "!" means the boolean was chosen as false
   else if (
     !includeUppercase &&
     !includeNumber &&
@@ -48,7 +49,7 @@ function writePassword() {
     !includeSpecialCharacter
   )
     alert("Must choose at least one set of criteria!");
-
+//this function collects characters based off of criteria selected
   for (var i = 0; i < enter; i++) {
     password += choices[Math.floor(Math.random() * choices.length)];
   }
