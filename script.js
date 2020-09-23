@@ -9,7 +9,6 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var choices = "";
 var password = "";
 var generateBtn = document.querySelector("#generate");
-
 var passwordText = document.querySelector("#password");
 //ask for length
 //initial user input, from choosing length to whether they want numbers/characters/letters
@@ -21,6 +20,7 @@ function writePassword() {
   } else if (enter < 8 || enter > 128) {
     alert("must be between 8 and 128");
   } else {
+    // confirms assigned to variables
     var includeUppercase = confirm("will password contain Uppercase letters?");
     var includeNumber = confirm("will password contain numbers?");
     var includeLowercase = confirm("will password contain lowercase letters?");
@@ -28,7 +28,6 @@ function writePassword() {
       "will password contain special characters?"
     );
   }
-
   if (includeUppercase) {
     choices += uppercase;
   }
@@ -40,7 +39,14 @@ function writePassword() {
   }
   if (includeSpecialCharacter) {
     choices += specialCharacter;
-  } else if (uppercase && !number && !lowercase && !specialCharacter)
+  }
+  //should return alert to user but is broken on deployed site
+  else if (
+    !includeUppercase &&
+    !includeNumber &&
+    !includeLowercase &&
+    !includeSpecialCharacter
+  )
     alert("Must choose at least one set of criteria!");
 
   for (var i = 0; i < enter; i++) {
