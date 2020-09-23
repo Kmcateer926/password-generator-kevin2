@@ -46,19 +46,16 @@ function generatePassword() {
   }
   if (includeSpecialCharacter) {
     choices += specialCharacter;
-  }
-
-  else if(!uppercase && !number && !lowercase && !specialCharacter)
-    alert("Must choose at least one set of criteria!")
-
+  } else if (!uppercase && !number && !lowercase && !specialCharacter)
+    alert("Must choose at least one set of criteria!");
 
   for (var i = 0; i < enter; i++) {
-    password += 
-     choices[Math.floor(Math.random() * choices.length)];
+    password += choices[Math.floor(Math.random() * choices.length)];
   }
-
-  return choices;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+function getRandomCharacters() {
+  return choices[Math.floor(Math.random() * choices.length)];
+}
