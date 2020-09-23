@@ -10,17 +10,11 @@ var choices = "";
 var password = "";
 var generateBtn = document.querySelector("#generate");
 
+var passwordText = document.querySelector("#password");
 //ask for length
-//user input starts here
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
 //initial user input, from choosing length to whether they want numbers/characters/letters
-// user is alerted if it does not meet required criteria
-function generatePassword() {
+function writePassword() {
+  // user is alerted if it does not meet required criteria
   enter = prompt("How many characters in password between 8 and 128?");
   if (!enter) {
     alert("must enter value!");
@@ -46,16 +40,17 @@ function generatePassword() {
   }
   if (includeSpecialCharacter) {
     choices += specialCharacter;
-  } else if (!uppercase && !number && !lowercase && !specialCharacter)
+  } else if (uppercase && !number && !lowercase && !specialCharacter)
     alert("Must choose at least one set of criteria!");
 
   for (var i = 0; i < enter; i++) {
     password += choices[Math.floor(Math.random() * choices.length)];
   }
+  passwordText.value = password;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-function getRandomCharacters() {
+function getRandomCharacter() {
   return choices[Math.floor(Math.random() * choices.length)];
 }
