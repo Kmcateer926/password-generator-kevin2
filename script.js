@@ -12,8 +12,12 @@ var generateBtn = document.querySelector("#generate");
 var passwordText = document.querySelector("#password");
 //initial user input, from choosing length to whether they want numbers/characters/letters
 function writePassword() {
+  // this is for when you click Generate Password, it will not add more password characters to existing.
+  password = "";
   // user is alerted if it does not meet required criteria
-  enter = parseInt(prompt("How many characters in password between 8 and 128?"));
+  enter = parseInt(
+    prompt("How many characters in password between 8 and 128?")
+  );
   if (!enter) {
     alert("must enter value!");
   } else if (enter < 8 || enter > 128) {
@@ -40,7 +44,7 @@ function writePassword() {
   if (includeSpecialCharacter) {
     choices += specialCharacter;
   }
-  //should return alert to user 
+  //should return alert to user
   // "!" means the boolean was chosen as false
   else if (
     !includeUppercase &&
@@ -49,13 +53,13 @@ function writePassword() {
     !includeSpecialCharacter
   )
     alert("Must choose at least one set of criteria!");
-//this function collects characters based off of criteria selected
+  //this function collects characters based off of criteria selected
   for (var i = 0; i < enter; i++) {
     password += choices[Math.floor(Math.random() * choices.length)];
   }
+  console.log(choices);
   passwordText.value = password;
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 function getRandomCharacter() {
