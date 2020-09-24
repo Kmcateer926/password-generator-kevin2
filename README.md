@@ -1,10 +1,12 @@
 # password-generator-kevin2
 # summary
 This project demonstrates understanding of basic Java scripts elements such as if, else if, function, for.
+The application produces a random string of characters based on user input criteria.
 
 
-
-# screenshot
+# project
+screenshot of project below
+ ![alt text](assets\passwordgen.png)
 
 
 
