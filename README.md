@@ -8,9 +8,18 @@ The application produces a random string of characters based on user input crite
 # project
 
 screenshot of project below
+
 <img src="assets\passwordgen.png?raw=true">
 
+<img src="assets\2020-10-28 (8).png">
+
 [![Watch the video][](https://youtu.be/x3Jq5iy3FcY)]
+
+# Technologies
+
+HTML
+CSS
+JavaScript
 
 # Git Hub
 
@@ -41,6 +50,11 @@ Beth Presten helped me with finalizing my code. Before our study session, my app
 looked at elements in this video https://www.youtube.com/watch?v=9sT03jEwcaw
 attempted to use elements with this initially https://stackoverflow.com/questions/59504465/generate-random-password-based-on-user-input-in-javascript
 
+# contact 
+
+Phone: 706-867-5611
+
+Email: kmcateer926@gmail.com
 
 # License
 
