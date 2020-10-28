@@ -8,9 +8,17 @@ The application produces a random string of characters based on user input crite
 # project
 
 screenshot of project below
-![Alt text](assets\passwordgen.png?raw=true)
+<img src="assets\passwordgen.png?raw=true">
 
 [![Watch the video][](https://youtu.be/x3Jq5iy3FcY)]
+
+# Git Hub
+
+https://github.com/Kmcateer926/password-generator-kevin2
+
+# Deployed 
+
+https://kmcateer926.github.io/password-generator-kevin2/
 
 # usage
 
@@ -32,3 +40,8 @@ Beth Presten helped me with finalizing my code. Before our study session, my app
 
 looked at elements in this video https://www.youtube.com/watch?v=9sT03jEwcaw
 attempted to use elements with this initially https://stackoverflow.com/questions/59504465/generate-random-password-based-on-user-input-in-javascript
+
+
+# License
+
+Used MIT License for this assignment. 
